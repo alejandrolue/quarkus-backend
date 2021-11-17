@@ -11,10 +11,17 @@ public class Entry {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime checkIn;
+    private LocalDateTime checkInDate;
 
     @Column(nullable = false)
-    private LocalDateTime checkOut;
+    private LocalDateTime checkOutDate;
+
+    @Column(nullable = false)
+    private LocalDateTime checkInTime;
+
+    @Column
+    private LocalDateTime checkOutTime;
+
 
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false)
@@ -28,20 +35,36 @@ public class Entry {
         this.id = id;
     }
 
-    public LocalDateTime getCheckIn() {
-        return checkIn;
+    public LocalDateTime getCheckInDate() {
+        return checkInDate;
     }
 
-    public void setCheckIn(LocalDateTime checkIn) {
-        this.checkIn = checkIn;
+    public void setCheckInDate(LocalDateTime checkInDate) {
+        this.checkInDate = checkInDate;
     }
 
-    public LocalDateTime getCheckOut() {
-        return checkOut;
+    public LocalDateTime getCheckOutDate() {
+        return checkOutDate;
     }
 
-    public void setCheckOut(LocalDateTime checkOut) {
-        this.checkOut = checkOut;
+    public void setCheckOutDate(LocalDateTime checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public LocalDateTime getCheckInTime() {
+        return checkInTime;
+    }
+
+    public void setCheckInTime(LocalDateTime checkInTime) {
+        this.checkInTime = checkInTime;
+    }
+
+    public LocalDateTime getCheckOutTime() {
+        return checkOutTime;
+    }
+
+    public void setCheckOutTime(LocalDateTime checkOutTime) {
+        this.checkOutTime = checkOutTime;
     }
 
     public Category getCategory() {
