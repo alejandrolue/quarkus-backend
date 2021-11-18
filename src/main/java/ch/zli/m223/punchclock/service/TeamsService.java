@@ -19,7 +19,7 @@ public class TeamsService {
     }
 
     @Transactional
-    public void delete(Long id) {
+    public void deleteTeam(Long id) {
         Teams teamsToDelete = getSingleTeams(id);
         entityManager.remove(teamsToDelete);
     }
