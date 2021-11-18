@@ -13,6 +13,7 @@ import io.smallrye.jwt.build.Jwt;
 import org.eclipse.microprofile.jwt.Claims;
 
 @RequestScoped
+
 public class AuthenticationService {
 
 
