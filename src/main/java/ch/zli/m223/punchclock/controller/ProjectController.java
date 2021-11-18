@@ -24,7 +24,7 @@ public class ProjectController {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Gets one Project", description = "Gets on Entry by the ID")
+    @Operation(summary = "Gets one Project", description = "Gets on Project by the ID")
     public Project getSingleEntry(@PathParam("id") Long id) {
         return projectService.getSingleProjekt(id);
     }
@@ -32,7 +32,7 @@ public class ProjectController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Add a new Project", description = "The newly created Projekt is returned. The id may not be passed.")
+    @Operation(summary = "Add a new Project", description = "The newly created Project is returned. The id may not be passed.")
     public Project add(Project project) {
         return projectService.createProject(project);
     }
@@ -40,8 +40,8 @@ public class ProjectController {
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
-    @Operation(summary = "Remove all Entry", description = "Removes Entries by id")
-    public void deleteEntry(@PathParam("id") Long id) {
+    @Operation(summary = "Remove all Project", description = "Removes Project by id")
+    public void deleteProject(@PathParam("id") Long id) {
         projectService.delete(id);
     }
 }
