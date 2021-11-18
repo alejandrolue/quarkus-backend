@@ -15,7 +15,7 @@ public class Teams {
 
     @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Projekt> entries;
+    private List<Project> entries;
 
     public Long getId() {
         return id;
@@ -33,11 +33,11 @@ public class Teams {
         this.teamName = teamName;
     }
 
-    public List<Projekt> getEntries() {
+    public List<Project> getEntries() {
         return entries;
     }
 
-    public void setEntries(List<Projekt> entries) {
+    public void setEntries(List<Project> entries) {
         this.entries = entries;
     }
 }
