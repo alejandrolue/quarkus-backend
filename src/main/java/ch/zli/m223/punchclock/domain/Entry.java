@@ -16,6 +16,12 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
+    @Column(nullable = false)
+    private String message;
+
+    @Column(nullable = false)
+    private String projekt;
+
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false)
     private Category category;
@@ -46,6 +52,22 @@ public class Entry {
 
     public Category getCategory() {
         return category;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getProjekt() {
+        return projekt;
+    }
+
+    public void setProjekt(String projekt) {
+        this.projekt = projekt;
     }
 
     public void setCategory(Category category) {
