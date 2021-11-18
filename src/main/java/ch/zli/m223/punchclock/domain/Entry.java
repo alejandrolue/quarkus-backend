@@ -11,17 +11,16 @@ public class Entry {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime checkInDate;
+    private LocalDateTime checkIn;
 
     @Column(nullable = false)
-    private LocalDateTime checkOutDate;
+    private LocalDateTime checkOut;
 
     @Column(nullable = false)
-    private LocalDateTime checkInTime;
+    private String message;
 
-    @Column
-    private LocalDateTime checkOutTime;
-
+    @Column(nullable = false)
+    private String projekt;
 
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false)
@@ -35,40 +34,40 @@ public class Entry {
         this.id = id;
     }
 
-    public LocalDateTime getCheckInDate() {
-        return checkInDate;
+    public LocalDateTime getCheckIn() {
+        return checkIn;
     }
 
-    public void setCheckInDate(LocalDateTime checkInDate) {
-        this.checkInDate = checkInDate;
+    public void setCheckIn(LocalDateTime checkIn) {
+        this.checkIn = checkIn;
     }
 
-    public LocalDateTime getCheckOutDate() {
-        return checkOutDate;
+    public LocalDateTime getCheckOut() {
+        return checkOut;
     }
 
-    public void setCheckOutDate(LocalDateTime checkOutDate) {
-        this.checkOutDate = checkOutDate;
-    }
-
-    public LocalDateTime getCheckInTime() {
-        return checkInTime;
-    }
-
-    public void setCheckInTime(LocalDateTime checkInTime) {
-        this.checkInTime = checkInTime;
-    }
-
-    public LocalDateTime getCheckOutTime() {
-        return checkOutTime;
-    }
-
-    public void setCheckOutTime(LocalDateTime checkOutTime) {
-        this.checkOutTime = checkOutTime;
+    public void setCheckOut(LocalDateTime checkOut) {
+        this.checkOut = checkOut;
     }
 
     public Category getCategory() {
         return category;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getProjekt() {
+        return projekt;
+    }
+
+    public void setProjekt(String projekt) {
+        this.projekt = projekt;
     }
 
     public void setCategory(Category category) {
