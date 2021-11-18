@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Teams {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,9 +14,9 @@ public class Teams {
     @Column(nullable = false)
     private String teamName;
 
-    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "teams", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Project> entries;
+    private List<Project> project;
 
     public Long getId() {
         return id;
@@ -33,11 +34,11 @@ public class Teams {
         this.teamName = teamName;
     }
 
-    public List<Project> getEntries() {
-        return entries;
+    public List<Project> getProject() {
+        return project;
     }
 
-    public void setEntries(List<Project> entries) {
-        this.entries = entries;
+    public void setProjects(List<Project> project) {
+        this.project = project;
     }
 }

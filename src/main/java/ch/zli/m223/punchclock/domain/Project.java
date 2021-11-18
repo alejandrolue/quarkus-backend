@@ -1,17 +1,15 @@
 package ch.zli.m223.punchclock.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.List;
 
+@Entity
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String projektName;
+    private String projectName;
 
     @ManyToOne
     @JoinColumn(name="teams_id", nullable = false)
@@ -25,12 +23,12 @@ public class Project {
         this.id = id;
     }
 
-    public String getProjektName() {
-        return projektName;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public void setProjektName(String projektName) {
-        this.projektName = projektName;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     public Teams getTeams() {
