@@ -1,16 +1,18 @@
 package ch.zli.m223.punchclock.controller;
 
-import ch.zli.m223.punchclock.domain.Project;
+
 import ch.zli.m223.punchclock.domain.Teams;
-import ch.zli.m223.punchclock.service.ProjectService;
 import ch.zli.m223.punchclock.service.TeamsService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+@Path("/teams")
+@Tag(name = "Teams", description = "Handling of Teams")
 public class TeamsController {
     @Inject
     TeamsService teamsService;
