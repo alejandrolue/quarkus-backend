@@ -17,7 +17,7 @@ public class ProjectService {
 
     @SuppressWarnings("unchecked")
     public List<Project> findAll() {
-        var query = entityManager.createQuery("From projekt");
+        var query = entityManager.createQuery("From Project");
         return query.getResultList();
     }
 

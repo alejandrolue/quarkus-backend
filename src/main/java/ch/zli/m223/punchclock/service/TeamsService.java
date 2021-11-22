@@ -17,7 +17,7 @@ public class TeamsService {
 
     @SuppressWarnings("unchecked")
     public List<Teams> findAll() {
-        var query = entityManager.createQuery("From teams");
+        var query = entityManager.createQuery("From Teams");
         return query.getResultList();
     }
 

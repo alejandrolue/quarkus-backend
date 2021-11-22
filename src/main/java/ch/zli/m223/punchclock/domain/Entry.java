@@ -16,14 +16,11 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String message;
 
-    @Column(nullable = false)
-    private String projekt;
-
-    @ManyToOne
-    private Category category;
+    @Column(nullable = true)
+    private String project;
 
     @ManyToOne
     private User user;
@@ -52,10 +49,6 @@ public class Entry {
         this.checkOut = checkOut;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
     public String getMessage() {
         return message;
     }
@@ -64,16 +57,8 @@ public class Entry {
         this.message = message;
     }
 
-    public String getProjekt() {
-        return projekt;
-    }
-
-    public void setProjekt(String projekt) {
-        this.projekt = projekt;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
+    public String getProject() {
+        return project;
     }
 
     public User getUser() {

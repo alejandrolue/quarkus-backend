@@ -1,9 +1,6 @@
 package ch.zli.m223.punchclock.controller;
 
-import ch.zli.m223.punchclock.domain.Category;
-import ch.zli.m223.punchclock.domain.Project;
 import ch.zli.m223.punchclock.domain.Role;
-import ch.zli.m223.punchclock.service.CategoryService;
 import ch.zli.m223.punchclock.service.RoleService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
@@ -25,7 +22,7 @@ public class RoleController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "List all Categories", description = "" )
+    @Operation(summary = "List all Roles", description = "List all Roles" )
     public List<Role> list() {
         return roleService.findAll();
     }

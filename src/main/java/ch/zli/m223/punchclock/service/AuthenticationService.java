@@ -3,6 +3,7 @@ package ch.zli.m223.punchclock.service;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -23,7 +24,7 @@ public class AuthenticationService {
     public String GenerateValidJwtToken(String username){
         String token =
             Jwt.issuer("https://zli.ch/issuer") 
-            .upn(username) 
+            .upn(username)
             .groups(new HashSet<>(Arrays.asList("User", "Admin"))) 
             .claim(Claims.birthdate.name(), "2001-07-13")
             .expiresIn(Duration.ofHours(1)) 
@@ -39,6 +40,13 @@ public class AuthenticationService {
 
         var result = query.getSingleResult();
         return (long)result == 1;
+    }
+
+    public List getUsers(User user) {
+        var query = entityManager.createQuery("SELECT (*) User WHERE username >= 5");
+        query.setParameter("name", user.getUsername());
+        var result = query.getResultList();
+        return result;
     }
 
 }
