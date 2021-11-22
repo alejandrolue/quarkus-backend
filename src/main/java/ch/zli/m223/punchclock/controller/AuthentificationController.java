@@ -60,7 +60,7 @@ public class AuthentificationController {
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "List all Users", description = "")
     @Path("/special")
-    public List findName(User user) {
+    public Object findName(User user) {
         return authenticationService.getUsers(user);
     }
 

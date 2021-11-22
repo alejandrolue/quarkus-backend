@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import ch.zli.m223.punchclock.domain.User;
+import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.smallrye.jwt.build.Jwt;
 import org.eclipse.microprofile.jwt.Claims;
 
@@ -42,10 +43,10 @@ public class AuthenticationService {
         return (long)result == 1;
     }
 
-    public List getUsers(User user) {
+    public Object getUsers(User user) {
         var query = entityManager.createQuery("SELECT (*) User WHERE username >= 5");
         query.setParameter("name", user.getUsername());
-        var result = query.getResultList();
+        var result = query.getSingleResult();
         return result;
     }
 
