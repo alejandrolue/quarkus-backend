@@ -12,7 +12,6 @@ public class Project {
     private String projectName;
 
     @ManyToOne
-    @JoinColumn(name="teams_id", nullable = false)
     private Teams teams;
 
     public Long getId() {

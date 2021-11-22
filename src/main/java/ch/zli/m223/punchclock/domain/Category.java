@@ -16,8 +16,7 @@ public class Category {
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Entry> entries;
-
+    private List<Entry> entry;
 
     public Long getId() {
         return id;
@@ -35,11 +34,11 @@ public class Category {
         this.title = title;
     }
 
-    public List<Entry> getEntries() {
-        return entries;
+    public List<Entry> getEntry() {
+        return entry;
     }
 
-    public void setEntries(List<Entry> entries) {
-        this.entries = entries;
+    public void setEntries(List<Entry> entry) {
+        this.entry = entry;
     }
 }

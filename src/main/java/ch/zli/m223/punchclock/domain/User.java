@@ -20,10 +20,13 @@ public class User {
     @Column
     @NotNull
     private String password;
-/*
-    @OneToMany(mappedBy = "user")
-    @JsonManagedReference(value = "user-entry")
-    private List<Entry> entries;*/
+
+    @ManyToOne
+    private Role role;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Entry> entry;
 
 
     public Long getId() {
@@ -50,11 +53,20 @@ public class User {
         this.password = password;
     }
 
-   /* public List<Entry> getEntries() {
-        return entries;
+
+    public Role getRole() {
+        return role;
     }
 
-    public void setEntries(List<Entry> entries) {
-        this.entries = entries;
-    }*/
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<Entry> getEntry() {
+        return entry;
+    }
+
+    public void setEntry(List<Entry> entry) {
+        this.entry = entry;
+    }
 }

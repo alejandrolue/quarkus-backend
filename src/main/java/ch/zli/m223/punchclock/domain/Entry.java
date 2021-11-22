@@ -23,8 +23,10 @@ public class Entry {
     private String projekt;
 
     @ManyToOne
-    @JoinColumn(name="category_id", nullable = false)
     private Category category;
+
+    @ManyToOne
+    private User user;
 
     public Long getId() {
         return id;
@@ -72,5 +74,13 @@ public class Entry {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
